@@ -11,5 +11,5 @@
     ],
     "name": "Some name",
     "short_name": "Repi",
-    "start_url": "/index.html"
+    "start_url": "/index.html?v1"
 }
