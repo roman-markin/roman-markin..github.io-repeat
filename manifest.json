@@ -1,0 +1,15 @@
+{
+    "background_color": "red",
+    "description": "description",
+    "display": "fullscreen",
+    "icons": [
+        {
+            "src": "img/icon-matreshka-256x256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        }
+    ],
+    "name": "Some name",
+    "short_name": "Repi",
+    "start_url": "/index.html"
+}
