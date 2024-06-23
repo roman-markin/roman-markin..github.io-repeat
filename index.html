@@ -27,8 +27,6 @@
 
       <section id="learn-word">
         <h2>How is the word translated?</h2>
-        <p id="current-word"></p>
-        <button onclick="learnWord()">Next word</button>
         <iframe
           id="meme"
           width="300"
@@ -37,7 +35,11 @@
           class="giphy-embed"
           allowfullscreen
         ></iframe>
+        <p id="current-word"></p>
         <div id="suggestions"></div>
+        <br>
+        <br>
+        <a href="#" id="next-word" onclick="learnWord()">Next word</a>
         
       </section>
     </main>

@@ -1,10 +1,10 @@
 @font-face {
   font-weight: 400;
-  font-family: 'Roboto Mono';
-  src: url('../fonst/RobotoMono-Regular.ttf');
+  font-family: "Roboto Mono";
+  src: url("../fonst/RobotoMono-Regular.ttf");
 }
 body {
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
   background: #333131;
 }
 .container {
@@ -24,6 +24,10 @@ button {
   font-size: 25px;
 }
 
+#next-word {
+  color: gray;
+}
+
 #vocabulary {
   padding: 0;
   width: 100%;
@@ -35,6 +39,8 @@ button {
 
 #current-word {
   font-size: 30px;
+  text-align: center;
+  font-weight: 700;
 }
 
 #suggestions {
@@ -57,7 +63,7 @@ button {
   align-items: center;
   z-index: 9999;
 }
- 
+
 .spinner {
   width: 50px;
   height: 50px;
@@ -66,7 +72,7 @@ button {
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
- 
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
