@@ -4,16 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Repeat</title>
-    <link href="style.css?v2" rel="stylesheet" />
-    <script src="index.js?v1" defer></script>
+    <link href="src/css/app.css" rel="stylesheet" />
+    <script src="src/js/index.js" defer></script>
+    <script src="src/js/learn.js" defer></script>
     <link rel="manifest" href="manifest.json" />
   </head>
   <body>
-    <section class="container">
-      <h1>Hello world!</h1>
-      <p>test new</p>
-    </section>
+    <main class="container">
+      <h1>Learn words every day</h1>
+      <section id="create-vocabulary">
+        <label>Your vocabulary</label>
+        <form>
+          <textarea id="vocabulary" rows="20"></textarea>
+          <br />
+          <button onclick="startLearn()" type="button">Start learn</button>
+        </form>
+      </section>
 
-    <button class="add-button">Add to home screen</button>
+      <section id="learn-word">
+        <p id="current-word"></p>
+        <button onclick="learnWord()">Next word</button>
+        <div id="suggestions"></div>
+        <iframe
+          id="meme"
+          width="480"
+          height="480"
+          frameborder="0"
+          class="giphy-embed"
+          allowfullscreen
+        ></iframe>
+      </section>
+    </main>
+
+    <!-- Кнопка установки приложения на рабочий стол -->
+    <button id="add-to-desktop">Add to home screen</button>
   </body>
 </html>

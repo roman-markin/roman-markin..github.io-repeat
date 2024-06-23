@@ -1,7 +1,7 @@
 // Register service worker to control making site work offline
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js').then(() => {
+  navigator.serviceWorker.register('/src/js/sw.js').then(() => {
     console.log('Service Worker Registered');
   });
 }
@@ -9,7 +9,7 @@ if ('serviceWorker' in navigator) {
 // Code to handle install prompt on desktop
 
 let deferredPrompt;
-const addBtn = document.querySelector('.add-button');
+const addBtn = document.getElementById('add-to-desktop');
 
 window.addEventListener('beforeinstallprompt', (e) => {
   // Prevent Chrome 67 and earlier from automatically showing the prompt
