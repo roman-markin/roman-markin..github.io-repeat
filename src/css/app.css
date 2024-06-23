@@ -4,15 +4,6 @@
   src: url('../fonst/RobotoMono-Regular.ttf');
 }
 body {
-  width: 100vw;
-  height: 100vh;
-
-  margin: 0;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
   font-family: 'Roboto Mono', monospace;
   background: #333131;
 }
@@ -26,6 +17,7 @@ body {
 
 iframe {
   pointer-events: none;
+  width: 100%;
 }
 
 button {
@@ -33,6 +25,7 @@ button {
 }
 
 #vocabulary {
+  padding: 0;
   width: 100%;
 }
 
