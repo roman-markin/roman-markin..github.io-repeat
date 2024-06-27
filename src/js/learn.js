@@ -82,9 +82,11 @@ function startLearn() {
 
 const currentWordElement = document.getElementById("current-word");
 const suggestionsElement = document.getElementById("suggestions");
+const scoreElement = document.getElementById("score");
 
 let currentWordIndex;
 let currentWord;
+let score = 0;
 
 function learnWord() {
   preloader.style.display = "flex";
@@ -93,6 +95,7 @@ function learnWord() {
   currentWord = vocabulary[currentWordIndex];
   //   console.log("current word", currentWord);
   currentWordElement.innerHTML = currentWord.en;
+  scoreElement.innerHTML = `&#128077; ${score}`;
 
   suggest();
   loadMeme();
@@ -124,7 +127,7 @@ function suggest() {
     const suggestionElement = document.createElement("button");
     suggestionElement.innerHTML = suggestion.ru;
     suggestionElement.onclick = function () {
-      suggestionElement.style.backgroundColor = "red";
+      suggestionElement.style.backgroundColor = "#7f5353";
     };
     // console.log(suggestionElement.outerHTML);
     suggestionsElement.appendChild(suggestionElement);
@@ -133,9 +136,11 @@ function suggest() {
       const suggestionElement = document.createElement("button");
       suggestionElement.innerHTML = currentWord.ru;
       suggestionElement.onclick = function () {
-        suggestionElement.style.backgroundColor = "green";
+        suggestionElement.style.backgroundColor = "#548354";
         setTimeout(learnWord, 500);
+        score += 1;
       };
+      
 
       suggestionsElement.appendChild(suggestionElement);
     }

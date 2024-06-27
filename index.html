@@ -15,8 +15,12 @@
     </div>
     <main class="container" id="content">
       <section id="create-vocabulary">
-        <h1>Learn words every day</h1>
-        <button onclick="startLearn()" type="button">Start learn</button>
+        <h1>Learn words</h1>
+        <div class="card start">
+          <p>learn dev words</p>
+          <button onclick="startLearn()" type="button">Start learn</button>
+        </div>
+
         <!-- <label>Your vocabulary</label>
         <form>
           <textarea id="vocabulary" rows="20"></textarea>
@@ -35,12 +39,16 @@
           class="giphy-embed"
           allowfullscreen
         ></iframe>
-        <p id="current-word"></p>
-        <div id="suggestions"></div>
-        <br>
-        <br>
-        <a href="#" id="next-word" onclick="learnWord()">Next word</a>
-        
+        <div class="card">
+          <p id="current-word"></p>
+        </div>
+        <div class="progress">
+          <span id="score"></span>
+          <a href="#" id="next-word" onclick="learnWord()">Next word</a>
+        </div>
+        <div class="card">
+          <div id="suggestions"></div>
+        </div>
       </section>
     </main>
 
