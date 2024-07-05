@@ -82,20 +82,22 @@ function startLearn() {
 
 const currentWordElement = document.getElementById("current-word");
 const suggestionsElement = document.getElementById("suggestions");
-const scoreElement = document.getElementById("score");
+const currectAnswerElement = document.getElementById("current-count");
 
 let currentWordIndex;
 let currentWord;
-let score = 0;
+let numberOfQuestions = 0;
+let currectAnswerCount = 0;
 
 function learnWord() {
   preloader.style.display = "flex";
+  numberOfQuestions += 1;
 
   currentWordIndex = Math.round(Math.random() * (vocabulary.length - 1));
   currentWord = vocabulary[currentWordIndex];
   //   console.log("current word", currentWord);
   currentWordElement.innerHTML = currentWord.en;
-  scoreElement.innerHTML = `&#128077; ${score}`;
+  currectAnswerElement.innerHTML = `&#128077; ${currectAnswerCount} &#128078; ${(numberOfQuestions - 1) - currectAnswerCount}`;
 
   suggest();
   loadMeme();
@@ -121,13 +123,15 @@ function suggest() {
 
   const randomPlace = Math.round(Math.random() * (suggestions.length - 1));
   //   console.log("random place", randomPlace);
-
+  let isCurrent = true;
   for (let i = 0; i < suggestions.length; i++) {
+    
     const suggestion = suggestions[i];
     const suggestionElement = document.createElement("button");
     suggestionElement.innerHTML = suggestion.ru;
     suggestionElement.onclick = function () {
       suggestionElement.style.backgroundColor = "#7f5353";
+      isCurrent = false;
     };
     // console.log(suggestionElement.outerHTML);
     suggestionsElement.appendChild(suggestionElement);
@@ -138,7 +142,8 @@ function suggest() {
       suggestionElement.onclick = function () {
         suggestionElement.style.backgroundColor = "#548354";
         setTimeout(learnWord, 500);
-        score += 1;
+        currectAnswerCount = isCurrent ? currectAnswerCount += 1 : currectAnswerCount;
+        isCurrent = true;
       };
       
 
